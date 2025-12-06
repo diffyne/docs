@@ -460,7 +460,7 @@ return [
 
 Set in `.env`:
 
-```env
+```bash
 DIFFYNE_DEBUG=true
 ```
 

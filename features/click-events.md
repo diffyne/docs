@@ -78,9 +78,6 @@ public function calculate($a, $b)
 ## Event Handling
 
 The `diff:click` directive automatically handles the click event and sends a request to the server. No event modifiers like `.prevent` or `.stop` are supported - handle event behavior in your component methods if needed.
-    Click me
-</a>
-```
 
 ## Loading States
 

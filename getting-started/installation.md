@@ -148,7 +148,7 @@ return [
 
 Add these to your `.env` file:
 
-```env
+```bash
 # Transport mode
 DIFFYNE_TRANSPORT=ajax
 
@@ -193,7 +193,7 @@ composer require sockeon/sockeon
 
 2. **Configure WebSocket in `.env`**:
 
-```env
+```bash
 DIFFYNE_TRANSPORT=websocket
 DIFFYNE_WS_HOST=127.0.0.1
 DIFFYNE_WS_PORT=6001

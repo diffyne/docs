@@ -32,7 +32,7 @@ composer require sockeon/sockeon
 
 Add to your `.env`:
 
-```env
+```bash
 DIFFYNE_TRANSPORT=websocket
 DIFFYNE_WS_HOST=127.0.0.1
 DIFFYNE_WS_PORT=6001
@@ -101,7 +101,7 @@ sudo supervisorctl start diffyne-websocket
 
 For production, restrict CORS origins:
 
-```env
+```bash
 DIFFYNE_WS_CORS_ORIGINS=https://example.com,https://www.example.com
 ```
 
@@ -116,7 +116,7 @@ php artisan tinker
 
 Add to `.env`:
 
-```env
+```bash
 DIFFYNE_WS_KEY=generated-key-here
 ```
 
@@ -389,7 +389,7 @@ class ChatRoom extends Component
 
 ### Step 1: Test Locally
 
-```env
+```bash
 DIFFYNE_TRANSPORT=websocket
 ```
 
@@ -418,7 +418,7 @@ Keep AJAX as fallback:
 
 If issues occur, simply change `.env`:
 
-```env
+```bash
 DIFFYNE_TRANSPORT=ajax
 ```
 

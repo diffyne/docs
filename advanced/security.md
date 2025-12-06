@@ -63,7 +63,7 @@ Every component state is signed with an HMAC signature using your application ke
 
 ### Disabling State Verification (Not Recommended)
 
-```env
+```bash
 DIFFYNE_VERIFY_STATE=false
 ```
 
@@ -314,7 +314,7 @@ public function loadData(): void { }
 
 ### 3. Keep State Verification Enabled
 
-```env
+```bash
 # ✅ Good - production
 DIFFYNE_VERIFY_STATE=true
 
@@ -337,7 +337,7 @@ DIFFYNE_VERIFY_STATE=false
 
 ### 5. Use Strong Signing Keys
 
-```env
+```bash
 # ✅ Good - use APP_KEY (strong, random)
 DIFFYNE_SIGNING_KEY=
 
