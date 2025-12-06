@@ -5,7 +5,7 @@ Diffyne provides a set of directives (special attributes) that enable reactive b
 ## Quick Reference
 
 | Directive | Purpose | Example |
-|-----------|---------|---------||
+|-----------|---------|---------|
 | `diff:click` | Call method on click | `<button diff:click="save">` |
 | `diff:change` | Call method on change | `<select diff:change="updateFilter">` |
 | `diff:model` | Two-way data binding | `<input diff:model="name">` |
