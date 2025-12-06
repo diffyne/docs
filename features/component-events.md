@@ -599,5 +599,5 @@ $listeners = $component->getEventListeners();
 - [Attributes](/features/attributes) - Learn about #[On] attribute
 - [Component State](/advanced/component-state) - State management
 - [Security](/advanced/security) - Security considerations
-- [Examples](/examples/) - More examples
+- [Examples](/examples/counter) - More examples
 

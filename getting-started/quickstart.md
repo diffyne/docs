@@ -140,4 +140,4 @@ Ready to build more? Check out:
 - [Your First Component](/getting-started/first-component) - Build a complete todo list component
 - [Data Binding](/features/data-binding) - Connect forms to component properties
 - [Forms & Validation](/features/forms) - Handle form submissions and validation
-- [Examples](/examples/) - See real-world component examples
+- [Examples](/examples/counter) - See real-world component examples

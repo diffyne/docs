@@ -354,4 +354,4 @@ Now that you can handle clicks, learn more:
 - [Data Binding](/features/data-binding) - Connect inputs to component properties
 - [Forms](/features/forms) - Handle form submissions
 - [Loading States](/features/loading-states) - Show feedback during requests
-- [Examples](/examples/) - See more real-world examples
+- [Examples](/examples/counter) - See more real-world examples

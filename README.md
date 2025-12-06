@@ -44,12 +44,12 @@ Welcome to the official Diffyne documentation. Diffyne is a blazing-fast, server
 
 - [GitHub Repository](https://github.com/diffyne/diffyne)
 - [Issue Tracker](https://github.com/diffyne/diffyne/issues)
-- [Changelog](../CHANGELOG.md)
+- [Changelog](https://github.com/diffyne/diffyne/blob/main/CHANGELOG.md)
 
 ## Getting Help
 
-- Check the [examples](examples/) for common use cases
-- Review the [features documentation](features/) for specific functionality
+- Check the [examples](/examples/counter) for common use cases
+- Review the [features documentation](/features/directives) for specific functionality
 - Open an issue on GitHub for bugs or feature requests
 
 ## Contributing

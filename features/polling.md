@@ -498,5 +498,5 @@ public function refresh()
 
 - [Loading States](/features/loading-states) - Show loading feedback
 - [Click Events](/features/click-events) - Manual refresh buttons
-- [Examples](/examples/) - See polling in action
+- [Examples](/examples/counter) - See polling in action
 - [Performance](/advanced/performance) - Optimization tips

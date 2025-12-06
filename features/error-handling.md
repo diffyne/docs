@@ -485,4 +485,4 @@ tail -f storage/logs/laravel.log
 - [Validation](/features/validation) - Form validation details
 - [Forms](/features/forms) - Form handling
 - [Testing](/advanced/testing) - Test error scenarios
-- [Examples](/examples/) - Error handling examples
+- [Examples](/examples/counter) - Error handling examples

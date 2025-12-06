@@ -491,4 +491,4 @@ Check for JavaScript errors in console. Server must respond for loading to clear
 - [Click Events](/features/click-events) - Trigger actions
 - [Forms](/features/forms) - Form handling
 - [Polling](/features/polling) - Real-time updates
-- [Examples](/examples/) - See loading states in action
+- [Examples](/examples/counter) - See loading states in action
