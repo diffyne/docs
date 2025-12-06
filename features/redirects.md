@@ -291,7 +291,7 @@ public function cancel(): void
 
 ## Next Steps
 
-- [Forms](forms.md) - Form handling
-- [Validation](validation.md) - Form validation
-- [Component Events](component-events.md) - Event system
+- [Forms](/features/forms) - Form handling
+- [Validation](/features/validation) - Form validation
+- [Component Events](/features/component-events) - Event system
 

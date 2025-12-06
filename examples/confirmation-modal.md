@@ -342,7 +342,7 @@ $this->dispatch('open-confirmation-modal', [
 
 ## Next Steps
 
-- [Component Events](features/component-events.md) - Learn about event system
-- [Attributes](features/attributes.md) - Learn about #[On] and #[Locked]
-- [Security](advanced/security.md) - Security best practices
+- [Component Events](/features/component-events) - Learn about event system
+- [Attributes](/features/attributes) - Learn about #[On] and #[Locked]
+- [Security](/advanced/security) - Security best practices
 

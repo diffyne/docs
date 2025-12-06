@@ -27,7 +27,7 @@ Triggers when element is clicked.
 
 **Note:** Event modifiers like `.prevent` or `.stop` are not supported. Handle event behavior in your component methods using the event parameter if needed.
 
-[Learn more about click events →](click-events.md)
+[Learn more about click events →](/features/click-events)
 
 ### diff:change
 
@@ -55,7 +55,7 @@ Handles form submission.
 
 **Note:** The form's default submission is automatically prevented by Diffyne when using `diff:submit`.
 
-[Learn more about forms →](forms.md)
+[Learn more about forms →](/features/forms)
 
 ## Data Binding
 
@@ -99,7 +99,7 @@ Creates two-way data binding between input and component property.
 <input diff:model.live.debounce.300="search">
 ```
 
-[Learn more about data binding →](data-binding.md)
+[Learn more about data binding →](/features/data-binding)
 
 ## Loading States
 
@@ -133,7 +133,7 @@ Shows/hides elements or adds classes during server requests.
 
 **Note:** Without `.class` modifier, elements get default loading styles (`opacity: 0.5` and `pointer-events: none`).
 
-[Learn more about loading states →](loading-states.md)
+[Learn more about loading states →](/features/loading-states)
 
 ## Polling
 
@@ -162,7 +162,7 @@ Automatically call a method at regular intervals.
 - `diff:poll="{milliseconds}"` - The interval in milliseconds (default: 2000)
 - `diff:poll.action="{method}"` - Method to call (default: 'refresh')
 
-[Learn more about polling →](polling.md)
+[Learn more about polling →](/features/polling)
 
 ## Error Handling
 
@@ -182,7 +182,7 @@ Automatically displays validation errors for a field.
 
 When validation fails, the error message is automatically inserted into the element.
 
-[Learn more about validation →](validation.md)
+[Learn more about validation →](/features/validation)
 
 ## Modifier Chaining
 
@@ -254,9 +254,9 @@ Many directives support chaining modifiers:
 
 ## Next Steps
 
-- [Click Events](click-events.md) - Handle user interactions
-- [Data Binding](data-binding.md) - Two-way data sync
-- [Forms](forms.md) - Form handling and submission
-- [Validation](validation.md) - Form validation
-- [Loading States](loading-states.md) - Better UX
-- [Polling](polling.md) - Real-time updates
+- [Click Events](/features/click-events) - Handle user interactions
+- [Data Binding](/features/data-binding) - Two-way data synchronization
+- [Forms](/features/forms) - Form handling and submission
+- [Validation](/features/validation) - Form validation
+- [Loading States](/features/loading-states) - Better user experience
+- [Polling](/features/polling) - Real-time updates

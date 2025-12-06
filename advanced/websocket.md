@@ -424,8 +424,8 @@ DIFFYNE_TRANSPORT=ajax
 
 ## Next Steps
 
-- [Installation](getting-started/installation.md) - Setup instructions
-- [Component Events](features/component-events.md) - Event system
-- [Performance](performance.md) - Optimization tips
+- [Installation](/getting-started/installation) - Setup instructions
+- [Component Events](/features/component-events) - Event system
+- [Performance](/advanced/performance) - Optimization tips
 - [Sockeon Documentation](https://sockeon.com/docs) - WebSocket server docs
 

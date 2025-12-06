@@ -349,7 +349,9 @@ public function save()
 
 ## Next Steps
 
-- [Data Binding](data-binding.md) - Two-way data sync
-- [Forms](forms.md) - Form handling
-- [Loading States](loading-states.md) - Better UX during requests
-- [Examples](../examples/) - More real-world examples
+Now that you can handle clicks, learn more:
+
+- [Data Binding](/features/data-binding) - Connect inputs to component properties
+- [Forms](/features/forms) - Handle form submissions
+- [Loading States](/features/loading-states) - Show feedback during requests
+- [Examples](/examples/) - See more real-world examples

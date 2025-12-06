@@ -522,7 +522,9 @@ public function submit()
 
 ## Next Steps
 
-- [Validation](validation.md) - Form validation in detail
-- [Data Binding](data-binding.md) - Two-way data sync
-- [Loading States](loading-states.md) - Better UX
-- [Contact Form Example](../examples/contact-form.md)
+Master form handling:
+
+- [Validation](/features/validation) - Validate user input in detail
+- [Data Binding](/features/data-binding) - Two-way data synchronization
+- [Loading States](/features/loading-states) - Improve user experience
+- [Contact Form Example](/examples/contact-form) - Complete working example

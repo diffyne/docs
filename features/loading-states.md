@@ -135,8 +135,8 @@ Without modifiers, elements with `diff:loading` get default styles: `opacity: 0.
 Adds CSS class during loading:
 
 ```blade
-<button diff:loading.class.opacity-50>
-<button diff:loading.class.disabled>
+<button diff:loading.class.opacity-50>Save</button>
+<button diff:loading.class.disabled>Submit</button>
 ```
 
 The specified class is added when loading starts and removed when loading ends.
@@ -338,19 +338,19 @@ Elements get `opacity: 0.5` and `pointer-events: none` automatically.
 
 ```blade
 {{-- Opacity --}}
-<button diff:loading.class="opacity-50">
+<button diff:loading.class="opacity-50">Save</button>
 
 {{-- Cursor --}}
-<button diff:loading.class="cursor-wait">
+<button diff:loading.class="cursor-wait">Process</button>
 
 {{-- Background --}}
-<button diff:loading.class="bg-gray-400">
+<button diff:loading.class="bg-gray-400">Submit</button>
 
 {{-- Multiple classes --}}
-<button diff:loading.class="opacity-50 cursor-not-allowed scale-95">
+<button diff:loading.class="opacity-50 cursor-not-allowed scale-95">Save</button>
 
 {{-- With transitions --}}
-<button class="transition-all" diff:loading.class="opacity-50 scale-95">
+<button class="transition-all" diff:loading.class="opacity-50 scale-95">Submit</button>
 ```
 
 ### Custom CSS
@@ -475,7 +475,7 @@ Ensure you're triggering a server request:
 <button diff:click="save">
 
 {{-- This doesn't - loading won't trigger --}}
-<button onclick="console.log('hi')">
+<button onclick="console.log('hi')">Click</button>
 ```
 
 ### Loading State Stuck
@@ -488,7 +488,7 @@ Check for JavaScript errors in console. Server must respond for loading to clear
 
 ## Next Steps
 
-- [Click Events](click-events.md) - Trigger actions
-- [Forms](forms.md) - Form handling
-- [Polling](polling.md) - Real-time updates
-- [Examples](../examples/) - See loading states in action
+- [Click Events](/features/click-events) - Trigger actions
+- [Forms](/features/forms) - Form handling
+- [Polling](/features/polling) - Real-time updates
+- [Examples](/examples/) - See loading states in action

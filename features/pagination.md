@@ -614,8 +614,8 @@ protected function onPageChange(): void
 
 ## Next Steps
 
-- [Query String Binding](query-string.md) - Learn about URL synchronization
-- [Data Binding](data-binding.md) - Two-way data binding
-- [Search Example](../examples/search.md) - Complete search implementation
-- [Component Events](component-events.md) - Event handling
+- [Query String Binding](/features/query-string) - Learn about URL synchronization
+- [Data Binding](/features/data-binding) - Two-way data binding
+- [Search Example](/examples/search) - Complete search implementation
+- [Component Events](/features/component-events) - Event handling
 

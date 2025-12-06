@@ -451,7 +451,9 @@ public string $name;
 
 ## Next Steps
 
-- [Forms](forms.md) - Form handling and submission
-- [Validation](validation.md) - Validate user input
-- [Loading States](loading-states.md) - Show loading feedback
-- [Contact Form Example](../examples/contact-form.md)
+Learn more about working with data:
+
+- [Forms](/features/forms) - Handle form submissions
+- [Validation](/features/validation) - Validate user input
+- [Loading States](/features/loading-states) - Show feedback during updates
+- [Contact Form Example](/examples/contact-form) - Complete form example

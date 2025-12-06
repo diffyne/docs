@@ -239,5 +239,7 @@ stdout_logfile=/path/to/logs/diffyne-websocket.log
 
 ## Next Steps
 
-- [Quick Start Guide](quickstart.md) - Build your first component
-- [Your First Component](first-component.md) - Detailed component creation tutorial
+Now that Diffyne is installed, you're ready to build:
+
+- [Quick Start](/getting-started/quickstart) - Build your first component in 5 minutes
+- [Your First Component](/getting-started/first-component) - Build a complete todo list component

@@ -516,7 +516,7 @@ public function submit()
 
 ## Next Steps
 
-- [Validation](../features/validation.md) - Detailed validation guide
-- [Forms](../features/forms.md) - Form handling
-- [Data Binding](../features/data-binding.md) - Model binding
-- [Search Example](search.md) - Live search with validation
+- [Validation](/features/validation) - Detailed validation guide
+- [Forms](/features/forms) - Form handling
+- [Data Binding](/features/data-binding) - Model binding
+- [Search Example](/examples/search) - Live search with validation

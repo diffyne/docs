@@ -267,7 +267,7 @@ public function decrement()
 
 ## Next Steps
 
-- [Todo List Example](todo-list.md) - Working with arrays
-- [Contact Form Example](contact-form.md) - Forms with validation
-- [Click Events](../features/click-events.md) - More about event handling
-- [Loading States](../features/loading-states.md) - Better UX
+- [Todo List Example](/examples/todo-list) - Working with arrays
+- [Contact Form Example](/examples/contact-form) - Forms with validation
+- [Click Events](/features/click-events) - More about event handling
+- [Loading States](/features/loading-states) - Better UX

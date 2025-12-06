@@ -377,8 +377,8 @@ public array $posts = [];
 
 ## Next Steps
 
-- [Attributes](features/attributes.md) - Learn about Locked, Computed, and other attributes
-- [Security](security.md) - Security features and best practices
-- [Lifecycle Hooks](lifecycle-hooks.md) - Component lifecycle
-- [Virtual DOM](virtual-dom.md) - How state changes update DOM
-- [Performance](performance.md) - State optimization
+- [Attributes](/features/attributes) - Learn about Locked, Computed, and other attributes
+- [Security](/advanced/security) - Security features and best practices
+- [Lifecycle Hooks](/advanced/lifecycle-hooks) - Component lifecycle
+- [Virtual DOM](/advanced/virtual-dom) - How state changes update DOM
+- [Performance](/advanced/performance) - State optimization

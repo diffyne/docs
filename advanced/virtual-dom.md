@@ -368,6 +368,6 @@ Planned improvements:
 
 ## Next Steps
 
-- [Lifecycle Hooks](lifecycle-hooks.md) - Component lifecycle
-- [Component State](component-state.md) - State management
-- [Performance](performance.md) - Optimization tips
+- [Lifecycle Hooks](/advanced/lifecycle-hooks) - Component lifecycle
+- [Component State](/advanced/component-state) - State management
+- [Performance](/advanced/performance) - Optimization tips

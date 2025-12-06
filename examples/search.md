@@ -515,7 +515,7 @@ User::select('id', 'name', 'email')
 
 ## Next Steps
 
-- [Data Binding](../features/data-binding.md) - More about model binding
-- [Loading States](../features/loading-states.md) - Better UX
-- [Performance](../advanced/performance.md) - Optimization tips
-- [Todo List Example](todo-list.md) - Array manipulation
+- [Data Binding](/features/data-binding) - More about model binding
+- [Loading States](/features/loading-states) - Better UX
+- [Performance](/advanced/performance) - Optimization tips
+- [Todo List Example](/examples/todo-list) - Array manipulation

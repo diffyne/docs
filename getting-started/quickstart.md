@@ -135,7 +135,9 @@ Diffyne sends a minimal patch:
 
 ## Next Steps
 
-- [Your First Component](first-component.md) - Detailed component tutorial
-- [Data Binding](../features/data-binding.md) - Two-way data sync
-- [Validation](../features/validation.md) - Form validation
-- [Examples](../examples/) - More component examples
+Ready to build more? Check out:
+
+- [Your First Component](/getting-started/first-component) - Build a complete todo list component
+- [Data Binding](/features/data-binding) - Connect forms to component properties
+- [Forms & Validation](/features/forms) - Handle form submissions and validation
+- [Examples](/examples/) - See real-world component examples

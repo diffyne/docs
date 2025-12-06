@@ -455,8 +455,8 @@ public ?string $filter = null;
 
 ## Next Steps
 
-- [Attributes](attributes.md) - Learn about QueryString attribute
-- [Component State](advanced/component-state.md) - State management
-- [Security](advanced/security.md) - Security considerations
-- [Examples](../examples/) - More examples
+- [Attributes](/features/attributes) - Learn about QueryString attribute
+- [Component State](/advanced/component-state) - State management
+- [Security](/advanced/security) - Security considerations
+- [Examples](/examples/) - More examples
 

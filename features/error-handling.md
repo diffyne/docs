@@ -482,7 +482,7 @@ tail -f storage/logs/laravel.log
 
 ## Next Steps
 
-- [Validation](validation.md) - Form validation details
-- [Forms](forms.md) - Form handling
-- [Testing](../advanced/testing.md) - Test error scenarios
-- [Examples](../examples/) - Error handling examples
+- [Validation](/features/validation) - Form validation details
+- [Forms](/features/forms) - Form handling
+- [Testing](/advanced/testing) - Test error scenarios
+- [Examples](/examples/) - Error handling examples

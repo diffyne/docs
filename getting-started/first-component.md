@@ -231,7 +231,7 @@ When you click "Add":
 ### Passing Parameters
 
 ```blade
-<button diff:click="removeTodo({{ $index }})">
+<button diff:click="removeTodo({{ $index }})">Remove</button>
 ```
 
 ```php
@@ -267,7 +267,9 @@ public function removeTodo($index)
 
 ## Next Steps
 
-- [Data Binding](../features/data-binding.md) - Deep dive into model binding
-- [Validation](../features/validation.md) - Add form validation
-- [Loading States](../features/loading-states.md) - Better UX during updates
-- [Contact Form Example](../examples/contact-form.md) - Form with validation
+Now that you've built your first component, learn more:
+
+- [Data Binding](/features/data-binding) - Connect forms to component properties
+- [Forms & Validation](/features/forms) - Handle form submissions and validation
+- [Loading States](/features/loading-states) - Show feedback during updates
+- [Contact Form Example](/examples/contact-form) - See a complete form example

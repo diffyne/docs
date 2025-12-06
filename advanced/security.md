@@ -448,8 +448,10 @@ class UserForm extends Component
 
 ## Next Steps
 
-- [Attributes](features/attributes.md) - Learn about security attributes
-- [Component State](component-state.md) - State management
-- [Validation](features/validation.md) - Input validation
-- [Testing](testing.md) - Testing security features
+Learn more about keeping your app secure:
+
+- [Attributes](/features/attributes) - Use Locked and Invokable attributes
+- [Component State](/advanced/component-state) - Understand state management
+- [Validation](/features/validation) - Validate user input
+- [Testing](/advanced/testing) - Test your security features
 

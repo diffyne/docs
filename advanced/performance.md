@@ -261,6 +261,6 @@ Payload sizes:
 
 ## Next Steps
 
-- [Virtual DOM](virtual-dom.md) - How Diffyne achieves small payloads
-- [Component State](component-state.md) - State management
-- [Testing](testing.md) - Test your components
+- [Virtual DOM](/advanced/virtual-dom) - How Diffyne achieves small payloads
+- [Component State](/advanced/component-state) - State management
+- [Testing](/advanced/testing) - Test your components

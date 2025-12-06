@@ -38,15 +38,23 @@ class Dashboard extends Component
 ```blade
 {{-- Poll every 1 second (1000ms) --}}
 <div diff:poll="1000" diff:poll.action="update">
+    Content here
+</div>
 
 {{-- Poll every 5 seconds (5000ms) --}}
 <div diff:poll="5000" diff:poll.action="update">
+    Content here
+</div>
 
 {{-- Poll every 30 seconds (30000ms) --}}
 <div diff:poll="30000" diff:poll.action="update">
+    Content here
+</div>
 
 {{-- Poll every 500 milliseconds --}}
 <div diff:poll="500" diff:poll.action="update">
+    Content here
+</div>
 ```
 
 ### Default Action
@@ -488,7 +496,7 @@ public function refresh()
 
 ## Next Steps
 
-- [Loading States](loading-states.md) - Show loading feedback
-- [Click Events](click-events.md) - Manual refresh buttons
-- [Examples](../examples/) - See polling in action
-- [Performance](../advanced/performance.md) - Optimization tips
+- [Loading States](/features/loading-states) - Show loading feedback
+- [Click Events](/features/click-events) - Manual refresh buttons
+- [Examples](/examples/) - See polling in action
+- [Performance](/advanced/performance) - Optimization tips

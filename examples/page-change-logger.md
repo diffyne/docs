@@ -404,7 +404,7 @@ public function hydrate(): void
 
 ## Next Steps
 
-- [Component Events](features/component-events.md) - Learn about event system
-- [Attributes](features/attributes.md) - Learn about #[On] attribute
-- [Lifecycle Hooks](advanced/lifecycle-hooks.md) - Component lifecycle
+- [Component Events](/features/component-events) - Learn about event system
+- [Attributes](/features/attributes) - Learn about #[On] attribute
+- [Lifecycle Hooks](/advanced/lifecycle-hooks) - Component lifecycle
 

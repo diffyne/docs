@@ -558,7 +558,9 @@ public function submit()
 
 ## Next Steps
 
-- [Forms](forms.md) - Form handling
-- [Data Binding](data-binding.md) - Two-way data sync
-- [Contact Form Example](../examples/contact-form.md) - Complete example
-- [Error Handling](error-handling.md) - Handle errors gracefully
+Keep learning about forms and validation:
+
+- [Forms](/features/forms) - Form handling and submission
+- [Data Binding](/features/data-binding) - Two-way data synchronization
+- [Error Handling](/features/error-handling) - Handle errors gracefully
+- [Contact Form Example](/examples/contact-form) - Complete working example

@@ -151,6 +151,6 @@ class TodoListTest extends TestCase
 
 ## Next Steps
 
-- [Component State](component-state.md) - Understanding state
-- [Lifecycle Hooks](lifecycle-hooks.md) - Hook behavior
-- [Performance](performance.md) - Optimization
+- [Component State](/advanced/component-state) - Understanding state
+- [Lifecycle Hooks](/advanced/lifecycle-hooks) - Hook behavior
+- [Performance](/advanced/performance) - Optimization

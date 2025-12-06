@@ -431,7 +431,7 @@ public function getFilteredTodos()
 
 ## Next Steps
 
-- [Contact Form Example](contact-form.md) - Forms with validation
-- [Search Example](search.md) - Live search
-- [Data Binding](../features/data-binding.md) - More about model binding
-- [Forms](../features/forms.md) - Form handling details
+- [Contact Form Example](/examples/contact-form) - Forms with validation
+- [Search Example](/examples/search) - Live search
+- [Data Binding](/features/data-binding) - More about model binding
+- [Forms](/features/forms) - Form handling details

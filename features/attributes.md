@@ -505,8 +505,8 @@ public function refreshFromOtherComponent(): void { }
 
 ## Next Steps
 
-- [Component State](advanced/component-state.md) - State management
-- [Security](advanced/security.md) - Security features
-- [Component Events](features/component-events.md) - Event system
-- [Query String Binding](features/query-string.md) - URL synchronization
+- [Component State](/advanced/component-state) - State management
+- [Security](/advanced/security) - Security features
+- [Component Events](/features/component-events) - Event system
+- [Query String Binding](/features/query-string) - URL synchronization
 

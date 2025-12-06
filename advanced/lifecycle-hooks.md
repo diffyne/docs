@@ -271,6 +271,6 @@ public function dehydrate()
 
 ## Next Steps
 
-- [Component State](component-state.md) - State management
-- [Virtual DOM](virtual-dom.md) - How rendering works
-- [Performance](performance.md) - Optimization tips
+- [Component State](/advanced/component-state) - State management
+- [Virtual DOM](/advanced/virtual-dom) - How rendering works
+- [Performance](/advanced/performance) - Optimization tips
