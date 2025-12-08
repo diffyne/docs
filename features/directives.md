@@ -2,6 +2,30 @@
 
 Diffyne provides a set of directives (special attributes) that enable reactive behavior in your components. All directives are prefixed with `diff:`.
 
+## Setup
+
+Before using Diffyne directives, make sure your layout includes the required Blade directives:
+
+```blade
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    @diffyneStyles  {{-- Includes CSRF meta tag --}}
+</head>
+<body>
+    {{-- Your content --}}
+    @diffyne('MyComponent')
+    
+    @diffyneScripts  {{-- Includes Diffyne JavaScript --}}
+</body>
+</html>
+```
+
+**Important:**
+- `@diffyneStyles` must be in the `<head>` section - it includes the CSRF meta tag required for Laravel's CSRF protection
+- `@diffyneScripts` must be before the closing `</body>` tag - it includes the Diffyne JavaScript library
+
 ## Quick Reference
 
 | Directive | Purpose | Example |

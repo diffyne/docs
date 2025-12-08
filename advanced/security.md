@@ -7,9 +7,11 @@ Diffyne includes several security features to protect your application from comm
 Diffyne's security model is based on:
 
 1. **State Signing**: HMAC signatures prevent state tampering
-2. **Locked Properties**: Server-controlled properties cannot be modified from client
-3. **Method Whitelisting**: Only explicitly marked methods can be invoked
-4. **Rate Limiting**: Prevents abuse and DoS attacks
+2. **Flexible Verification Modes**: Balance security and usability
+3. **Locked Properties**: Server-controlled properties cannot be modified from client
+4. **Method Whitelisting**: Only explicitly marked methods can be invoked
+5. **Rate Limiting**: Prevents abuse and DoS attacks
+6. **CSRF Protection**: Laravel's built-in CSRF protection
 
 ## State Signing
 
@@ -45,6 +47,58 @@ Every component state is signed with an HMAC signature using your application ke
    - If signature matches: Request is processed
    - If signature doesn't match: `403 Forbidden` error
 
+## Security Modes
+
+Diffyne offers flexible security configuration to balance security and usability:
+
+### 1. `property-updates` (Recommended - Default)
+
+**What it does:**
+- ✅ Verifies signatures for property updates (`diff:model.live`, `diff:model.lazy`)
+- ✅ Allows form submissions without strict signature verification
+- ✅ Relies on Laravel's built-in CSRF protection for form submissions
+
+**Best for:** Most applications - provides security where it matters most while maintaining good UX.
+
+**Configuration:**
+```php
+// config/diffyne.php
+'security' => [
+    'verify_state' => 'property-updates',
+],
+```
+
+Or via `.env`:
+```
+DIFFYNE_VERIFY_STATE=property-updates
+```
+
+### 2. `strict`
+
+**What it does:**
+- ✅ Verifies signatures for ALL requests (form submissions + property updates)
+- ✅ Uses lenient verification for form submissions (if enabled)
+- ⚠️ May cause issues with form submissions if state reconstruction fails
+
+**Best for:** High-security applications where you need maximum protection.
+
+**Configuration:**
+```php
+'security' => [
+    'verify_state' => 'strict',
+    'lenient_form_verification' => true, // Recommended
+],
+```
+
+### 3. `none` or `false`
+
+**What it does:**
+- ❌ Disables signature verification entirely
+- ⚠️ Relies only on Laravel's CSRF protection
+- ⚠️ Not recommended for production
+
+**Best for:** Development only, or when you have other security measures in place.
+
 ### Configuration
 
 ```php
@@ -53,21 +107,34 @@ Every component state is signed with an HMAC signature using your application ke
     // Signing key (defaults to APP_KEY)
     'signing_key' => env('DIFFYNE_SIGNING_KEY'),
     
-    // Verify state signature on every request (recommended: true)
-    'verify_state' => env('DIFFYNE_VERIFY_STATE', true),
+    // Verify state signature mode: 'property-updates', 'strict', or false
+    'verify_state' => env('DIFFYNE_VERIFY_STATE', 'property-updates'),
+    
+    // Allow lenient verification for form submissions (strict mode only)
+    'lenient_form_verification' => env('DIFFYNE_LENIENT_FORMS', true),
     
     // Rate limiting (requests per minute)
     'rate_limit' => env('DIFFYNE_RATE_LIMIT', 60),
 ],
 ```
 
-### Disabling State Verification (Not Recommended)
+### Recommended Configuration
 
-```bash
-DIFFYNE_VERIFY_STATE=false
+For most applications, use this configuration:
+
+```php
+'security' => [
+    'verify_state' => 'property-updates',
+    'lenient_form_verification' => true,
+    'rate_limit' => 60,
+],
 ```
 
-**Warning**: Only disable for development. Production should always verify state signatures.
+This provides:
+- ✅ Security for property updates (where tampering is most likely)
+- ✅ Smooth form submission experience
+- ✅ CSRF protection via Laravel middleware
+- ✅ Rate limiting to prevent abuse
 
 ## Locked Properties
 
@@ -312,11 +379,14 @@ public function save(): void { }
 public function loadData(): void { }
 ```
 
-### 3. Keep State Verification Enabled
+### 3. Use Appropriate Verification Mode
 
 ```bash
-# ✅ Good - production
-DIFFYNE_VERIFY_STATE=true
+# ✅ Good - recommended for most apps
+DIFFYNE_VERIFY_STATE=property-updates
+
+# ✅ Good - maximum security
+DIFFYNE_VERIFY_STATE=strict
 
 # ❌ Bad - only for development
 DIFFYNE_VERIFY_STATE=false
@@ -435,11 +505,42 @@ class UserForm extends Component
 }
 ```
 
+## Troubleshooting
+
+### Form submissions failing with signature errors?
+
+1. Check your `.env` file:
+   ```
+   DIFFYNE_VERIFY_STATE=property-updates
+   ```
+
+2. Clear config cache:
+   ```bash
+   php artisan config:clear
+   ```
+
+3. Verify CSRF token is included (use `@diffyneStyles` directive in your layout)
+
+### Migration from strict mode
+
+If you were experiencing issues with strict verification:
+
+```php
+// Old (causing issues)
+'verify_state' => true, // or 'verify_state' => env('DIFFYNE_VERIFY_STATE', true)
+
+// New (recommended)
+'verify_state' => 'property-updates', // or env('DIFFYNE_VERIFY_STATE', 'property-updates')
+```
+
+No code changes needed - your forms will now work smoothly while property updates remain secure.
+
 ## Security Checklist
 
 - [ ] All server-controlled data uses `#[Locked]`
 - [ ] Only public actions are marked `#[Invokable]`
-- [ ] State verification is enabled (`DIFFYNE_VERIFY_STATE=true`)
+- [ ] State verification is configured appropriately (`DIFFYNE_VERIFY_STATE=property-updates` recommended)
+- [ ] CSRF meta tag is included (use `@diffyneStyles` directive)
 - [ ] Rate limiting is configured appropriately
 - [ ] All user input is validated
 - [ ] Authorization checks are in place for sensitive actions

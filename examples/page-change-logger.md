@@ -296,6 +296,7 @@ class PostList extends Component
 <html>
 <head>
     <title>My App</title>
+    @diffyneStyles
 </head>
 <body>
     <main>

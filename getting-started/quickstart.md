@@ -84,11 +84,26 @@ Open `resources/views/diffyne/counter.blade.php`:
 
 ## 4. Use Component
 
-Add the component to any Blade view:
+Add the component to any Blade view. Make sure your layout includes the required directives:
 
 ```blade
-@diffyne('Counter')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    @diffyneStyles
+</head>
+<body>
+    @diffyne('Counter')
+    
+    @diffyneScripts
+</body>
+</html>
 ```
+
+**Important:** 
+- `@diffyneStyles` must be in the `<head>` section (includes CSRF meta tag)
+- `@diffyneScripts` must be before the closing `</body>` tag
 
 ## 5. See It In Action
 

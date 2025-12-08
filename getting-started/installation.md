@@ -62,8 +62,17 @@ In your main layout file (e.g., `resources/views/layouts/app.blade.php`), add th
 
 The `@diffyneScripts` directive includes:
 - The Diffyne JavaScript runtime
-- CSRF token configuration
 - Component initialization
+
+Also add `@diffyneStyles` in your `<head>` section to include the CSRF meta tag:
+```blade
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    @diffyneStyles
+</head>
+```
 
 ## Verification
 
@@ -116,7 +125,8 @@ return [
     // Security settings
     'security' => [
         'signing_key' => env('DIFFYNE_SIGNING_KEY'), // Defaults to APP_KEY
-        'verify_state' => env('DIFFYNE_VERIFY_STATE', true),
+        'verify_state' => env('DIFFYNE_VERIFY_STATE', 'property-updates'), // 'property-updates', 'strict', or false
+        'lenient_form_verification' => env('DIFFYNE_LENIENT_FORMS', true),
         'rate_limit' => env('DIFFYNE_RATE_LIMIT', 60),
     ],
     
@@ -156,7 +166,8 @@ DIFFYNE_TRANSPORT=ajax
 DIFFYNE_DEBUG=false
 
 # Security
-DIFFYNE_VERIFY_STATE=true
+DIFFYNE_VERIFY_STATE=property-updates
+DIFFYNE_LENIENT_FORMS=true
 DIFFYNE_RATE_LIMIT=60
 
 # Performance

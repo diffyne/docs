@@ -167,15 +167,30 @@ Modifiers:
 
 ## Using the Component
 
-Add to any page:
+Add to any page. Make sure your layout includes the required directives:
 
 ```blade
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    @diffyneStyles
+</head>
+<body>
+    @extends('layouts.app')
 
-@section('content')
-    @diffyne('TodoList')
-@endsection
+    @section('content')
+        @diffyne('TodoList')
+    @endsection
+    
+    @diffyneScripts
+</body>
+</html>
 ```
+
+**Important:** 
+- `@diffyneStyles` must be in the `<head>` section (includes CSRF meta tag)
+- `@diffyneScripts` must be before the closing `</body>` tag
 
 ## How Updates Work
 
