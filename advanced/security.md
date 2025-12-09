@@ -11,7 +11,6 @@ Diffyne's security model is based on:
 3. **Locked Properties**: Server-controlled properties cannot be modified from client
 4. **Method Whitelisting**: Only explicitly marked methods can be invoked
 5. **Rate Limiting**: Prevents abuse and DoS attacks
-6. **CSRF Protection**: Laravel's built-in CSRF protection
 
 ## State Signing
 
@@ -56,7 +55,6 @@ Diffyne offers flexible security configuration to balance security and usability
 **What it does:**
 - ✅ Verifies signatures for property updates (`diff:model.live`, `diff:model.lazy`)
 - ✅ Allows form submissions without strict signature verification
-- ✅ Relies on Laravel's built-in CSRF protection for form submissions
 
 **Best for:** Most applications - provides security where it matters most while maintaining good UX.
 
@@ -94,7 +92,6 @@ DIFFYNE_VERIFY_STATE=property-updates
 
 **What it does:**
 - ❌ Disables signature verification entirely
-- ⚠️ Relies only on Laravel's CSRF protection
 - ⚠️ Not recommended for production
 
 **Best for:** Development only, or when you have other security measures in place.
@@ -133,7 +130,6 @@ For most applications, use this configuration:
 This provides:
 - ✅ Security for property updates (where tampering is most likely)
 - ✅ Smooth form submission experience
-- ✅ CSRF protection via Laravel middleware
 - ✅ Rate limiting to prevent abuse
 
 ## Locked Properties
@@ -277,7 +273,6 @@ fetch('/_diffyne/update', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
     },
     body: JSON.stringify({
         componentId: componentId,
@@ -307,7 +302,6 @@ fetch('/_diffyne/update', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
     },
     body: JSON.stringify({
         componentId: componentId,
@@ -337,7 +331,6 @@ fetch('/_diffyne/call', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
     },
     body: JSON.stringify({
         componentId: componentId,
@@ -519,7 +512,7 @@ class UserForm extends Component
    php artisan config:clear
    ```
 
-3. Verify CSRF token is included (use `@diffyneStyles` directive in your layout)
+3. Verify state signature is being sent correctly
 
 ### Migration from strict mode
 
@@ -540,7 +533,6 @@ No code changes needed - your forms will now work smoothly while property update
 - [ ] All server-controlled data uses `#[Locked]`
 - [ ] Only public actions are marked `#[Invokable]`
 - [ ] State verification is configured appropriately (`DIFFYNE_VERIFY_STATE=property-updates` recommended)
-- [ ] CSRF meta tag is included (use `@diffyneStyles` directive)
 - [ ] Rate limiting is configured appropriately
 - [ ] All user input is validated
 - [ ] Authorization checks are in place for sensitive actions

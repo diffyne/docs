@@ -11,7 +11,7 @@ Before using Diffyne directives, make sure your layout includes the required Bla
 <html>
 <head>
     <title>My App</title>
-    @diffyneStyles  {{-- Includes CSRF meta tag --}}
+    @diffyneStyles  {{-- Includes meta tags --}}
 </head>
 <body>
     {{-- Your content --}}
@@ -23,7 +23,7 @@ Before using Diffyne directives, make sure your layout includes the required Bla
 ```
 
 **Important:**
-- `@diffyneStyles` must be in the `<head>` section - it includes the CSRF meta tag required for Laravel's CSRF protection
+- `@diffyneStyles` must be in the `<head>` section
 - `@diffyneScripts` must be before the closing `</body>` tag - it includes the Diffyne JavaScript library
 
 ## Quick Reference

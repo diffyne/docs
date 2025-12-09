@@ -340,36 +340,37 @@ class MultiEmailForm extends Component
 
 ### File Upload
 
+Diffyne provides a built-in file upload system with temporary storage. See the [File Uploads](/features/file-uploads) documentation for complete details.
+
+**Quick Example:**
+
 ```blade
-<form diff:submit="uploadFile">
-    <input 
-        type="file" 
-        id="fileInput"
-        onchange="document.getElementById('fileName').value = this.files[0]?.name || ''">
-    
-    <input 
-        type="hidden" 
-        id="fileName"
-        diff:model="fileName">
-    
-    <button type="submit">Upload</button>
-</form>
+<input type="file" diff:model="image" accept="image/*">
+
+@if($image)
+    <img src="{{ $component->getTemporaryFilePreviewUrl($image) }}" alt="Preview">
+@endif
+
+<button diff:click="saveImage">Save</button>
 ```
 
-Component:
-
 ```php
-class FileUpload extends Component
+use Diffyne\Attributes\Invokable;
+
+class ImageUpload extends Component
 {
-    public string $fileName = '';
+    public ?string $image = null;
     
-    public function uploadFile()
+    #[Invokable]
+    public function saveImage(): void
     {
-        $this->validate(['fileName' => 'required']);
-        
-        if (request()->hasFile('file')) {
-            $path = request()->file('file')->store('uploads');
-            $this->fileName = $path;
+        if ($this->image) {
+            $path = $this->moveTemporaryFile(
+                $this->image,
+                'uploads/' . uniqid() . '.jpg',
+                'public'
+            );
+            // File is now in permanent storage
         }
     }
 }

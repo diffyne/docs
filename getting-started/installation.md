@@ -30,6 +30,7 @@ This creates `config/diffyne.php` where you can configure:
 - Security settings
 - Performance options
 - WebSocket configuration
+- File upload settings
 
 ### 3. Publish Assets
 
@@ -64,7 +65,7 @@ The `@diffyneScripts` directive includes:
 - The Diffyne JavaScript runtime
 - Component initialization
 
-Also add `@diffyneStyles` in your `<head>` section to include the CSRF meta tag:
+Also add `@diffyneStyles` in your `<head>` section:
 ```blade
 <head>
     <meta charset="UTF-8">
@@ -139,6 +140,15 @@ return [
         'enable_compression' => env('DIFFYNE_COMPRESSION', true),
     ],
     
+    // File upload configuration
+    'file_upload' => [
+        'disk' => env('DIFFYNE_FILE_DISK', 'local'),
+        'temporary_path' => env('DIFFYNE_FILE_TEMP_PATH', 'diffyne/temp'),
+        'max_size' => env('DIFFYNE_FILE_MAX_SIZE', 12288), // 12MB in KB
+        'allowed_mimes' => env('DIFFYNE_FILE_MIMES') ? explode(',', env('DIFFYNE_FILE_MIMES')) : null,
+        'cleanup_after_hours' => env('DIFFYNE_FILE_CLEANUP_HOURS', 24),
+    ],
+    
     // WebSocket configuration (when using 'websocket' transport)
     'websocket' => [
         'host' => env('DIFFYNE_WS_HOST', '127.0.0.1'),
@@ -148,7 +158,7 @@ return [
         'cors' => [
             'allowed_origins' => explode(',', env('DIFFYNE_WS_CORS_ORIGINS', '*')),
             'allowed_methods' => ['GET', 'POST', 'OPTIONS'],
-            'allowed_headers' => ['Content-Type', 'Authorization', 'X-CSRF-TOKEN'],
+            'allowed_headers' => ['Content-Type', 'Authorization'],
         ],
     ],
 ];
@@ -174,6 +184,13 @@ DIFFYNE_RATE_LIMIT=60
 DIFFYNE_CACHE_VIEWS=true
 DIFFYNE_MINIFY_PATCHES=true
 DIFFYNE_COMPRESSION=true
+
+# File Upload
+DIFFYNE_FILE_DISK=local
+DIFFYNE_FILE_TEMP_PATH=diffyne/temp
+DIFFYNE_FILE_MAX_SIZE=12288
+DIFFYNE_FILE_MIMES=image/jpeg,image/png,image/gif
+DIFFYNE_FILE_CLEANUP_HOURS=24
 
 # WebSocket (if using websocket transport)
 DIFFYNE_WS_HOST=127.0.0.1

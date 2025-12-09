@@ -189,7 +189,7 @@ Add to any page. Make sure your layout includes the required directives:
 ```
 
 **Important:** 
-- `@diffyneStyles` must be in the `<head>` section (includes CSRF meta tag)
+- `@diffyneStyles` must be in the `<head>` section
 - `@diffyneScripts` must be before the closing `</body>` tag
 
 ## How Updates Work

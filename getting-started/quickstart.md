@@ -102,7 +102,7 @@ Add the component to any Blade view. Make sure your layout includes the required
 ```
 
 **Important:** 
-- `@diffyneStyles` must be in the `<head>` section (includes CSRF meta tag)
+- `@diffyneStyles` must be in the `<head>` section
 - `@diffyneScripts` must be before the closing `</body>` tag
 
 ## 5. See It In Action

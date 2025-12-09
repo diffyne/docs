@@ -16,6 +16,7 @@ Welcome to the official Diffyne documentation. Diffyne is a blazing-fast, server
 - [Data Binding](features/data-binding.md) - Two-way data synchronization
 - [Query String Binding](features/query-string.md) - Sync properties with URL parameters
 - [Form Handling](features/forms.md) - Working with forms and submissions
+- [File Uploads](features/file-uploads.md) - Upload and manage files with temporary storage
 - [Validation](features/validation.md) - Laravel validation integration
 - [Loading States](features/loading-states.md) - Show loading indicators
 - [Polling](features/polling.md) - Real-time data updates
