@@ -7,7 +7,8 @@ Diffyne provides a simple, Livewire-like file upload system with temporary file 
 The file upload feature allows you to:
 - Upload files temporarily before form submission
 - Preview uploaded files before saving
-- Move files to permanent storage when ready
+- Preserve original filenames (stored automatically with each upload)
+- Move files to permanent storage when ready (with option to use original filename)
 - Automatically clean up old temporary files
 
 ## Basic File Upload
@@ -27,11 +28,22 @@ class ProductForm extends Component
     {
         if ($this->image) {
             // Move temporary file to permanent storage
+            // Option 1: Use original filename
             $imagePath = $this->moveTemporaryFile(
                 $this->image,
-                'products/' . $this->productId . '/' . basename($this->image),
-                'public' // Storage disk
+                'products/' . $this->productId . '/',
+                'public',
+                true  // Use original filename
             );
+
+            // Option 2: Use custom filename
+            // $extension = pathinfo($this->image, PATHINFO_EXTENSION) ?: 'jpg';
+            // $filename = uniqid() . '.' . $extension;
+            // $imagePath = $this->moveTemporaryFile(
+            //     $this->image,
+            //     'products/' . $this->productId . '/' . $filename,
+            //     'public'
+            // );
 
             if ($imagePath) {
                 ProductImage::create([
@@ -141,7 +153,8 @@ Move a temporary file to permanent storage:
 $permanentPath = $this->moveTemporaryFile(
     string $identifier,        // Temporary file identifier
     string $destinationPath,   // Destination path (e.g., 'avatars/user-123.jpg')
-    ?string $disk = null       // Storage disk (defaults to config)
+    ?string $disk = null,      // Storage disk (defaults to config)
+    bool $useOriginalName = false // If true, uses original filename instead of destinationPath filename
 );
 ```
 
@@ -149,11 +162,21 @@ $permanentPath = $this->moveTemporaryFile(
 
 **Example:**
 ```php
+// Use custom filename
 $imagePath = $this->moveTemporaryFile(
     $this->avatar,
     'avatars/' . auth()->id() . '.jpg',
     'public'
 );
+
+// Use original filename
+$imagePath = $this->moveTemporaryFile(
+    $this->avatar,
+    'avatars/',  // Directory only
+    'public',
+    true  // Use original filename
+);
+// Result: 'avatars/original-filename.jpg'
 ```
 
 ### `getTemporaryFilePreviewUrl()`
@@ -169,6 +192,22 @@ $previewUrl = $this->getTemporaryFilePreviewUrl(string $identifier);
 **Example:**
 ```blade
 <img src="{{ $component->getTemporaryFilePreviewUrl($image) }}" alt="Preview">
+```
+
+### `getTemporaryFileOriginalName()`
+
+Get the original filename for a temporary file:
+
+```php
+$originalName = $this->getTemporaryFileOriginalName(string $identifier);
+```
+
+**Returns:** Original filename or `null` if not found
+
+**Example:**
+```php
+$originalName = $this->getTemporaryFileOriginalName($this->image);
+// Returns: "my-document.pdf" or null
 ```
 
 ### `deleteTemporaryFile()`
@@ -404,7 +443,7 @@ $path = $this->moveTemporaryFile($this->image, 'avatars/user.jpg', 'public');
 // Don't use the identifier directly in your database
 ```
 
-### 2. Generate Unique Filenames
+### 2. Generate Unique Filenames or Use Original Names
 
 ```php
 // ✅ Good - unique filename
@@ -412,8 +451,11 @@ $extension = pathinfo($identifier, PATHINFO_EXTENSION) ?: 'jpg';
 $filename = uniqid() . '.' . $extension;
 $path = $this->moveTemporaryFile($identifier, "uploads/{$filename}", 'public');
 
-// ❌ Bad - may overwrite existing files
-$path = $this->moveTemporaryFile($identifier, 'uploads/image.jpg', 'public');
+// ✅ Good - use original filename (preserves user's filename)
+$path = $this->moveTemporaryFile($identifier, 'uploads/', 'public', true);
+
+// ❌ Bad - may overwrite existing files if using original name without directory
+$path = $this->moveTemporaryFile($identifier, 'uploads/image.jpg', 'public', true);
 ```
 
 ### 3. Clean Up After Use
